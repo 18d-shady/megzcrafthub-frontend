@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Tropea";
+  src: url("../public/fonts/Tropea Regular.ttf");
+}
+
+@font-face {
+  font-family: "League Spartan";
+  src: url("../public/fonts/league-spartan/LeagueSpartan-VariableFont_wght.ttf");
+}
+
+.bg-slider {
+    background-size: 100% 100%;
+    background-position: 100% 0%;
+    transition: background-position 0.5s ease-in-out;
+  }
+  
+  .bg-slider.animate {
+    animation: slide 0.5s forwards;
+  }
+  
+  @keyframes slide {
+    0% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  .animate-slide {
+    animation: slide 7s infinite;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+.video-container {
+  @apply relative overflow-hidden;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container video {
+  @apply absolute top-0 left-0 w-full h-full object-cover;
+}
+
+
+/* Add this to your TailwindCSS config file 
+.rotate-3d {
+    animation: rotate 10s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+      transform: perspective(1000px) rotateY(360deg);
+    }
+  }
+  */
