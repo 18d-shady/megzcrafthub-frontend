@@ -1,39 +1,134 @@
-import React from 'react';
+import {React, useRef, useEffect} from 'react';
+import useIsVisible from './useIsVisible';
 
 function Landing2(){
-  const imageUrl = require('./underland2.jpg');
+  const imageUrl = require('./underland.jpeg');
+  const imageUrl2 = require('./underland2.jpeg');
+  const imageUrl3 = require('./underland3.jpeg');
+  const imageUrl4 = require('./underland4.jpeg');
+  const images = [
+    { src: imageUrl, alt: 'Explore Giftboxes' },
+    { src: imageUrl2, alt: 'Explore Paper Bags' },
+    { src: imageUrl3, alt: 'Explore Cards' },
+    { src: imageUrl4, alt: 'Explore Shredded Papers' },
+  ];
+
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    const clone = slider.cloneNode(true);
+    slider.parentNode.appendChild(clone);
+    clone.setAttribute('aria-hidden', 'true');
+  }, [sliderRef]);
+
+  const ref1 = useRef();
+  const isVisible1 = useIsVisible(ref1);
+
+  const ref2 = useRef();
+  const isVisible2 = useIsVisible(ref2);
+
+  const ref3 = useRef();
+  const isVisible3 = useIsVisible(ref3);
+
+  const ref4 = useRef();
+  const isVisible4 = useIsVisible(ref4);
+
+  const ref5 = useRef();
+  const isVisible5 = useIsVisible(ref5);
   return(
-    <div className="w-full lg:h-96 bg-cover bg-purple-500 font-tropea"
-     style={{ backgroundImage: `url(${imageUrl})`, }} >
-     <div className="w-full h-full backdrop-blur-lg bg-white/30  p-5">
-      <h1 className="text-center text-white md:text-purple-800 text-3xl mt-5 mb-10">Our Products</h1>
-
-      <div className="inline-block mx-24 md:mx-8 lg:mx-16 xl:mx-24 ">
-        <div className=" rounded-full w-32 h-32 md:w-20 md:h-20 xl:w-32 xl:h-32 bg-white p-8 md:p-2 xl:p-8 block mx-auto">
-          <svg className="h-16 w-16 text-purple-800 text-center"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="20 12 20 22 4 22 4 12" />  <rect x="2" y="7" width="20" height="5" />  <line x1="12" y1="22" x2="12" y2="7" />  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
-          </svg>
+    <div className="px-10 lg:px-24 w-full text-base mt-16">
+      <div className="w-full hidden md:grid md:grid-rows-2 lg:grid-rows-3 md:grid-cols-2 
+        lg:grid-cols-4 md:gap-4 font-league">
+        <div ref={ref1} className={`transition-opacity  lg:row-end-3 lg:row-span-2 
+        ease-in duration-700 ${isVisible1 
+        ? "opacity-100 w-full md:w-auto h-72 bg-cover bg-center font-tropea" 
+        : "opacity-0"}`}
+        style={{ backgroundImage: `url(${imageUrl})`, }} >
+          <p className="m-5 font-bold bg-white text-black p-3">
+            Explore Gift Boxes
+          </p>
+        
         </div>
-        <h3 className="text-center text-white text-2xl md:text-xl xl:text-2xl my-5">Customized Giftboxes</h3>
-      </div>
-
-      <div className="inline-block mx-24 md:mx-8 lg:mx-16 xl:mx-24">
-        <div className=" rounded-full w-32 h-32  md:w-20 md:h-20 xl:w-32 xl:h-32 bg-white p-8 md:p-2 xl:p-8 block mx-auto">
-          <svg className="h-16 w-166 text-purple-800 text-center"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />  <line x1="3" y1="6" x2="21" y2="6" />  <path d="M16 10a4 4 0 0 1-8 0" />
-          </svg>
+        <div className="hidden lg:block lg:row-start-3 text-sm">
+          <p>
+          Explore unique giftbox designs ranging from lid boxes, flip boxes,
+          magnetic flip boxes, magnetic flip boxes with handle, circle boxes,
+          heart shape boxes, collapsible boxes, triangle shape boxes even to 
+          money boxes. 
+          </p>
         </div>
-        <h3 className="text-center text-white text-2xl md:text-xl xl:text-2xl my-5">Durable Paper Bags</h3>
-      </div>
+        <div className="hidden lg:block lg:row-start-1 text-sm ">
+          <p>
+          Explore different durable and customized paper bags designs,
+          useful for packaging, gift wrapping, lunch bags, souvenirs and lots more.
 
-      <div className="inline-block mx-24 md:mx-8 lg:mx-16 xl:mx-24">
-        <div className=" rounded-full w-32 h-32 md:w-20 md:h-20 xl:w-32 xl:h-32 bg-white p-8 md:p-2 xl:p-8 block mx-auto">
-          <svg className="h-16 w-16 text-purple-800 text-center"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round">  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />  <line x1="8" y1="2" x2="8" y2="18" />  <line x1="16" y1="6" x2="16" y2="22" />
-          </svg>
+          </p>
         </div>
-        <h3 className="text-center text-white text-2xl md:text-xl xl:text-2xl my-5">Lovely Gift Cards</h3>
-      </div>
 
+        <div ref={ref2} className={`transition-opacity  lg:row-start-2 lg:row-span-2
+        ease-in duration-700 ${isVisible2 
+        ? "opacity-100 w-full md:w-auto h-72 bg-cover bg-center font-tropea" 
+        : "opacity-0"}`}
+        style={{ backgroundImage: `url(${imageUrl2})`, }} >
+          <p className="m-5 font-bold bg-white text-black p-3">
+            Explore Paper Bags
+          </p>
+        
+        </div>
+        
+        <div ref={ref3} className={`transition-opacity lg:row-end-3 lg:row-span-2
+        ease-in duration-700 ${isVisible3 
+        ? "opacity-100 w-full md:w-auto h-72 bg-cover bg-center font-tropea " 
+        : "opacity-0"}`}
+        style={{ backgroundImage: `url(${imageUrl3})`, }} >
+          <p className="m-5 font-bold bg-white text-black p-3">
+            Explore Cards
+          </p>
+        </div>
+
+        <div className="hidden lg:block lg:row-start-3 text-sm">
+          <p>
+          A lovely card for your lover, or for your friends on their weddings, graduations,
+          or even on their birthdays. Explore beautiful cards with heartwarming messages for those
+          whom you love
+          </p>
+        </div>
+        <div className="hidden lg:block lg:row-start-1 text-sm ">
+          <p>
+            Shredded Papers available also. Additionally, we offer tutorials on creating
+            exceptional designs, feel free to head to the tutorial section above.
+          </p>
+        </div>
+
+        <div ref={ref4} className={`transition-opacity lg:row-start-2 lg:row-span-2
+        ease-in duration-700 ${isVisible4 
+        ? "opacity-100 w-full md:w-auto h-72 bg-cover bg-center font-tropea" 
+        : "opacity-0"}`}
+        style={{ backgroundImage: `url(${imageUrl4})`, }} >
+          <p className="m-5 font-bold bg-white text-black p-3">
+            Explore Shredded Paper
+          </p>
+        </div>
+      </div>
       
-     </div>
+      {/* for small screens*/}
+      <div className="md:hidden w-full inline-flex flex-nowrap overflow-hidden mt-0">
+        <ul ref={sliderRef} className="flex items-center justify-center animate-infinite-scroll">
+          {images.map((image, index) => (
+            <li key={index}>
+              <div className="w-96 h-96 bg-cover bg-center font-tropea mx-4" 
+                style={{ backgroundImage: `url(${image.src})`, }} >
+                <p ref={ref5} className="m-5 font-bold bg-white text-black p-3">
+                  {image.alt}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <div key={isVisible5} className="hidden"></div>
+      </div>
+      
     </div>
   )
 }

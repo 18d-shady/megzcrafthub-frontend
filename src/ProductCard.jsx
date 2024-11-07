@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function ProductCard({
     productId,
@@ -9,19 +10,44 @@ function ProductCard({
 
 }){
   //const imageUrl = require(`${productImage}`)
+  //const [message, setMessage] = useState({});
+  const addToCart = (event) => {
+    event.preventDefault();
+    axios.post('https://davisolehi.pythonanywhere.com/e/api/add-to-cart/', {
+      product_id: Number(productId),
+      product_name: productName,
+      product_price: price,
+    })
+      .then(response => {
+        alert(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
   return(
-    <div className="w-36 md:w-auto h-64 md:72 lg:h-84 ms-8 md:ms-5 lg:ms-8 mb-7 
-    md:basis-1/3 lg:basis-1/5 xl:basis-1/5 grow shrink inline-block font-serif">
+    <div className="grow shrink inline-block font-serif shadow-lg group bg-white">
       <Link to={`/gift-boxes/${productId}`}>
-        <div className="mx-auto bg-gray-100 bg-center w-36 md:w-full h-56 md:h-60 lg:h-64 
-        bg-contain bg-no-repeat"
-          style={{ backgroundImage: `url(${productImage})`, }}
-        >
+        <div className="w-full h-48 md:h-52 lg:h-56 overflow-hidden relative">
+          <div className="mx-auto bg-center w-full h-48 md:h-52 lg:h-56 duraton-500 cursor-pointer
+          bg-cover bg-no-repeat hover:scale-125 transition-all "
+            style={{ backgroundImage: `url(${productImage})`, }}
+          >
+          </div>
+          <button className="" onClick={addToCart}>
+            <svg className="text-white bg-purple-700 rounded-full h-8 w-8 p-1 absolute group-hover:block hidden
+              bottom-3 right-3"  
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" 
+            >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+          </button>
         </div>
-        <h4 className="mt-3 ms-3 h-8 text-slate-700 text-sm text-overflow overflow-hidden">
+
+        <h4 className="ms-2 mt-2 h-7 text-slate-700 text-sm text-overflow overflow-hidden">
             {productName}
         </h4>
-        <p className="text-purple-700 ms-3">
+        <p className=" ms-2 mb-3  text-purple-700">
             N{price}
         </p>
       </Link>

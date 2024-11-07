@@ -18,15 +18,15 @@ function Product({title}) {
   }, []);
 
   return (
-    <div className=" mt-12 w-full border-b pb-12 pe-8 border-gray-300">
+    <div className="py-10 w-full border-b px-8 lg:px-24 border-gray-300">
         {Object.keys(giftbox).map(category => (
           <div key={category}>
             {title.includes(category) ? (
             <div className="">
-            <h2 className=" text-2xl mb-3 font-serif ms-7 md:ms-14 inline-block">{title}</h2>
+            <h2 className=" text-2xl mb-7 font-serif inline-block">{title}</h2>
             <Link to={`/collections/${category}`} 
              className="text-purple-700 border-purple-700 border text-base font-serif 
-              float-right me-7 inline-block rounded-lg px-2 py-1">
+              float-right inline-block px-2 py-1">
                 Show All 
             </Link>
             </div>
@@ -34,21 +34,22 @@ function Product({title}) {
           </div>
         ))}
         
-        <div>
-          <div className="block mx-auto">
+        
+        <div className="block mx-auto">
+          <div className="grid grid-rows-3 md:grid-rows-2 lg:grid-rows-1 gap-5 md:gap-8 
+              grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {Object.keys(giftbox).map(category => (
-              <div key={category} className="md:flex md:flex-row">
-              {title.includes(category) ? (
-                giftbox[category].map(gift => (
-                <ProductCard
+              title.includes(category) ? (
+                giftbox[category].slice(0, 5).map(gift => ( // Use slice to get the first 5 items
+                  <ProductCard
                     key={gift.id}
                     productId={gift.id}
                     productImage={`https://davisolehi.pythonanywhere.com${gift.image}`}
                     productName={gift.name}
                     price={gift.price}
-                />
-              ))) : (<span className="hidden"></span>)}
-              </div>
+                  />
+                ))
+              ) : null
             ))}
           </div>
         </div>

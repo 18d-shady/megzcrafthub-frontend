@@ -12,6 +12,10 @@
   src: url("../public/fonts/league-spartan/LeagueSpartan-VariableFont_wght.ttf");
 }
 
+.custom-height {
+  height: 100%;
+}
+
 .bg-slider {
     background-size: 100% 100%;
     background-position: 100% 0%;
@@ -52,6 +56,9 @@
 .video-container video {
   @apply absolute top-0 left-0 w-full h-full object-cover;
 }
+
+
+
 
 
 /* Add this to your TailwindCSS config file 

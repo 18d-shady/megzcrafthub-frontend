@@ -1,6 +1,11 @@
 import HomePage from './HomePage';
 import ProductItem from './ProductItem';
 import CollectionBox from './CollectionBox';
+import Cart from './Cart';
+import Payment from './Payment';
+import Order from './Order';
+
+
 import {
   BrowserRouter,
   Routes,
@@ -15,6 +20,9 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/gift-boxes/:productId" element={<ProductItem />} />
             <Route path="/collections/:collectionName" element={<CollectionBox />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/orders" element={<Order />} />
             
         </Routes>
       </BrowserRouter>
