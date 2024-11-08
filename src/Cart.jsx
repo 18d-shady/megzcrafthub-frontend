@@ -156,7 +156,7 @@ function Cart() {
               style={{ backgroundImage: `url(https://davisolehi.pythonanywhere.com${item.gift_box.image})`, }}>
               </div>
               <div className="align-middle md:flex justify-between w-2/3">
-                <p className="w-44 align-middle">{item.gift_box.name}   x{item.quantity}</p>
+                <p className="w-full md:w-80 align-middle">{item.gift_box.name}   x{item.quantity}</p>
                 <p className="w-20 align-middle">N{item.price * item.quantity}</p>
                 <input
                   className=" w-12 text-center align-middle border border-gray-900 "

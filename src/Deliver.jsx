@@ -5,7 +5,7 @@ function Deliver(){
   const imageUrl = require('./deliver.jpg');
   const imageUrl2 = require('./landing.jpeg');
   return(
-    <div className="bg-gray-50 md:my-10">
+    <div className="bg-gray-50 md:my-10 px-2">
       
       <div className="md:h-96 md:flex md:flex-row w-full md:mb-20">
         <div className="md:basis-1/2 lg:basis-5/12 h-96 md:h-full bg-cover bg-center bg-no-repeat"

@@ -28,28 +28,28 @@ function Foot() {
             </p>
           </div>
 
-          <div className="font-league basis-1/6  text-slate-400">
-            <h3 className="text-xl text-white">Products</h3>
+          <div className="font-league basis-1/6  text-slate-300">
+            <h3 className="text-lg text-white">Products</h3>
           
             {categories.slice(0, 4).map(category => ( 
               <Link to={`/collections/${category.name}`} key={category.id}
-                className="block"
+                className="block text-sm md:text-base"
               >
                 {category.name}
               </Link>
             ))}
           </div>
 
-          <div className="font-league basis-2/6  mb-5 text-slate-400">
-            <h3 className="text-xl mt-2 text-white">Services</h3>
+          <div className="font-league basis-2/6  mb-5 text-slate-300 text-sm md:text-base">
+            <h3 className="text-lg mt-2 text-white">Services</h3>
             <p className="block">Tutorials</p>
 
-            <h3 className="text-xl mt-2 text-white">Company</h3>
+            <h3 className="text-lg mt-2 text-white">Company</h3>
             <p className="block">Privacy Policy</p>
             <p className="block">Terms and Condtions</p>
           </div>
         </div>
-        <div className="font-league basis:1/3 md:basis-1/6 mt-12 md:mt-1">
+        <div className="font-league basis:1/3 md:basis-1/6 mt-12 md:mt-1 ms-3">
             <h3 className="Block">Contact Us:</h3>
             <a className=" inline-block mx-1" href="https://wa.me/c/2349099385597" target="_blank" rel="noopener noreferrer">
               <svg
@@ -70,7 +70,7 @@ function Foot() {
               <svg className="h-5 w-5 text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
             </a>
 
-            <h3 className="block">Email: <br/><span className="text-slate-300 text-sm">megzcrafts47@gmail.com</span></h3>
+            <h3 className="block">Email: <br/><span className="text-slate-300 text-xs">megzcrafts47@gmail.com</span></h3>
             <h3 className="block">Phone Number: <br/><span className="text-slate-300 text-sm">+2349099385597</span></h3>
             <h3 className="block">Address: <br/>
               <span className="text-slate-300 text-sm">

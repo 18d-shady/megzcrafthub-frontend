@@ -26,7 +26,7 @@ function ProductCard({
       });
   };
   return(
-    <div className="grow shrink inline-block font-serif shadow-lg group bg-white">
+    <div className="grow shrink inline-block font-league shadow-lg group bg-white">
       <Link to={`/gift-boxes/${productId}`}>
         <div className="w-full h-48 md:h-52 lg:h-56 overflow-hidden relative">
           <div className="mx-auto bg-center w-full h-48 md:h-52 lg:h-56 duraton-500 cursor-pointer

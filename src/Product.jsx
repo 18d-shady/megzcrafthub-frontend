@@ -18,7 +18,7 @@ function Product({title}) {
   }, []);
 
   return (
-    <div className="py-10 w-full border-b px-8 lg:px-24 border-gray-300">
+    <div className="py-10 w-full border-b px-6 md:px-8 lg:px-24 border-gray-300">
         {Object.keys(giftbox).map(category => (
           <div key={category}>
             {title.includes(category) ? (

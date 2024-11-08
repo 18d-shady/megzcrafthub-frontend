@@ -37,7 +37,7 @@ function Landing2(){
   const ref5 = useRef();
   const isVisible5 = useIsVisible(ref5);
   return(
-    <div className="px-10 lg:px-24 w-full text-base mt-16">
+    <div className="px-1 md:px-10 lg:px-24 w-full text-base mt-16">
       <div className="w-full hidden md:grid md:grid-rows-2 lg:grid-rows-3 md:grid-cols-2 
         lg:grid-cols-4 md:gap-4 font-league">
         <div ref={ref1} className={`transition-opacity  lg:row-end-3 lg:row-span-2 

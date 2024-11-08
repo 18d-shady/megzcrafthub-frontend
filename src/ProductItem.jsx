@@ -93,11 +93,11 @@ function ProductItem(){
       </div>
       </div>
 
-      <div className="md:basis-1/2 bg-white font-serif md:me-10 mb-40">
-        <div className="w-full xl:w-2/3 h-96 mx-3 my-5 md:my-1 md:ms-10">
-          <h3 className="text-slate-800 font-serif text-3xl my-1">{gift.name}</h3>
+      <div className="md:basis-1/2 bg-white font-league md:me-10 mb-10">
+        <div className="w-full xl:w-2/3 mx-3 my-5 md:my-1 md:ms-10">
+          <h3 className="text-slate-800 font-league text-3xl my-1">{gift.name}</h3>
           <p className="bg-slate-600 text-sm text-white w-20 py-1 text-center font-serif">In Stock</p>
-          <h3 className="text-2xl my-4 font-serif">N{gift.price}</h3>
+          <h3 className="text-2xl my-4 font-league">N{gift.price}</h3>
           <p className="text-slate-600 font-league">{gift.description}</p>
           
           <textarea 
