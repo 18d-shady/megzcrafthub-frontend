@@ -7,7 +7,9 @@ function Order() {
   const [orderItems, setOrderItems] = useState([]);
 
   useEffect(() => {
-    axios.get('https://davisolehi.pythonanywhere.com/e/api/final-order')
+    axios.get('https://davisolehi.pythonanywhere.com/e/api/final-order', {
+      withCredentials: true,
+    })
       .then(response => {
         setOrderItems(response.data);
       })

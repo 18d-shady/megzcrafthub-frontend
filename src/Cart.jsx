@@ -22,7 +22,9 @@ function Cart() {
 
   useEffect(() => {
     if (shouldRunEffect) {
-      axios.get('https://davisolehi.pythonanywhere.com/e/api/view-cart/')
+      axios.get('https://davisolehi.pythonanywhere.com/e/api/view-cart/', {
+        withCredentials: true,
+      })
         .then(response => {
           setCartItems(response.data);
         })
@@ -35,7 +37,9 @@ function Cart() {
 
   useEffect(() => {
     if (shouldRunEffect2) {
-      axios.get('https://davisolehi.pythonanywhere.com/e/api/order/')
+      axios.get('https://davisolehi.pythonanywhere.com/e/api/order/', {
+        withCredentials: true,
+      })
         .then(response => {
           if (response.data.message === "You have no billing record, please input below...") {
             setErrorMessage("You have no billing record, please input below...");
@@ -56,6 +60,8 @@ function Cart() {
     axios.post('https://davisolehi.pythonanywhere.com/e/api/view-cart/', {
       order_id: itemId,
       cart_action: newQuantity,
+    }, {
+      withCredentials: true
     })
     .then(response => {
       console.log(response.data);
@@ -79,6 +85,8 @@ function Cart() {
     axios.post('https://davisolehi.pythonanywhere.com/e/api/complete-checkout/', {
       actionn: "proceed",
       selected: selectedOption,
+      }, {
+        withCredentials: true
       })
       .then(response => {
         console.log(response.data); 
@@ -97,7 +105,10 @@ function Cart() {
       phone_number: phoneNumber,
       address: address,
     };
-    axios.post('https://davisolehi.pythonanywhere.com/e/api/order/', formData)
+    axios.post('https://davisolehi.pythonanywhere.com/e/api/order/', formData,
+    {
+      withCredentials: true
+    })
       .then(response => {
         console.log(response.data);
         setShouldRunEffect2(true);

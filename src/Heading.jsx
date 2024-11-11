@@ -27,7 +27,9 @@ function Heading(){
   }, []);
 
   useEffect(() => {
-    axios.get('https://davisolehi.pythonanywhere.com/e/api/view-cart/')
+    axios.get('https://davisolehi.pythonanywhere.com/e/api/view-cart/', {
+      withCredentials: true,
+    })
       .then(response => {
         setCartCount(response.data.length);
       })
