@@ -17,6 +17,8 @@ function ProductCard({
       product_id: Number(productId),
       product_name: productName,
       product_price: price,
+    }, {
+      withCredentials: true
     })
       .then(response => {
         alert(response.data);

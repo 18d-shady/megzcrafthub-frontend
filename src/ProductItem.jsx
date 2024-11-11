@@ -70,6 +70,8 @@ function ProductItem(){
       product_quantity: productQuantity,
       description_text: dText,
       description_image: dImage
+    }, {
+      withCredentials: true
     })
       .then(response => {
         alert(response.data);
