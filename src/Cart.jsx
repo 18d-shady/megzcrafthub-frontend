@@ -135,7 +135,7 @@ function Cart() {
   const publicKey = process.env.REACT_APP_FLW_PUBLIC_KEY;
   const imageUrl = require('./logo.png');
   const config = {
-    public_key: 'FLWPUBK_TEST-30228099b37bd8b47815f5b429834a06-X',
+    public_key: publicKey,
     tx_ref: Date.now(),
     amount: Number(amount) + (0.015 * Number(amount)),
     currency: 'NGN',
