@@ -15,7 +15,7 @@ function Foot() {
   }, []);
 
   return (
-    <div className="bg-slate-800 w-full text-white pb-5">
+    <div className="bg-slate-800 w-full text-white pb-6">
       <div className="block flex flex-row mx-3 lg:mx-auto border-b border-slate-400 md:justify-between
       pt-10 lg:w-2/3 justify-start">
         <div className="basis-2/3 md:basis-5/6 md:flex md:flex-row justify-between md:ms-6">
@@ -82,7 +82,7 @@ function Foot() {
         </div>
       </div>
 
-      <div className="block mt-5 text-xs text-center mx-3">
+      <div className="block mt-6 text-xs text-center mx-3">
       <p>2024 Megzcrafthub. All rights reserved | Designed by Moonlight Tech, Blue Whale services</p>
       </div>
     </div>
