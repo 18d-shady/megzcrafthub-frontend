@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function Deliver(){
-  const imageUrl = require('./deliver.jpeg');
+  const imageUrl = require('./landing.jpeg');
   const imageUrl2 = require('./landing2.jpeg');
   return(
     <div className="bg-gray-50 md:my-10 px-2">
