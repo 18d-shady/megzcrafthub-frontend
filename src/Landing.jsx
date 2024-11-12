@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 function Landing(){
-  const imageUrl = require('./landing2.jpeg');
+  const imageUrl = require('./landing.jpeg');
   
   return(
     <div className="lg:min-h-screen w-full mb-7 lg:mb-8 mt-24 p-6 md:p-10 lg:ps-0">
